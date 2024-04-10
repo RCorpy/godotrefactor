@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bowg3jnb23g4x"]
+[gd_scene load_steps=6 format=3 uid="uid://bowg3jnb23g4x"]
 
 [ext_resource type="Texture2D" uid="uid://djao5th8no2hs" path="res://sprites/Tilemap_Flat.png" id="1_8704p"]
 [ext_resource type="PackedScene" uid="uid://dijea0kq8cvfa" path="res://player.tscn" id="2_gtswd"]
+[ext_resource type="PackedScene" uid="uid://dv2b14ns7tlte" path="res://knight_house.tscn" id="3_7wghq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3x0uh"]
 texture = ExtResource("1_8704p")
@@ -543,3 +544,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608,
 
 [node name="Player" parent="." instance=ExtResource("2_gtswd")]
 position = Vector2(129, 114)
+
+[node name="KnightHouse" parent="." instance=ExtResource("3_7wghq")]
+position = Vector2(414, 339)

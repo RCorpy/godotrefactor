@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv2b14ns7tlte"]
+
+[ext_resource type="Script" path="res://knight_house.gd" id="1_1j4b6"]
+[ext_resource type="Texture2D" uid="uid://dmjpepexiq51e" path="res://sprites/House_Construction.png" id="1_de3oh"]
+[ext_resource type="Script" path="res://KnightHouseInteractArea.gd" id="3_mb37k"]
+[ext_resource type="Script" path="res://KnightHouseDataStore.gd" id="4_gm141"]
+[ext_resource type="PackedScene" uid="uid://v6h7byfqfq6u" path="res://plus_banner.tscn" id="5_oqqwd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k045s"]
+radius = 62.0
+height = 188.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrleh"]
+radius = 97.0
+height = 272.0
+
+[node name="KnightHouse" type="StaticBody2D"]
+script = ExtResource("1_1j4b6")
+
+[node name="KnightHouseCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_k045s")
+
+[node name="KnightHouseSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_de3oh")
+
+[node name="KnightHouseInteract" type="Area2D" parent="."]
+
+[node name="KnightHouseInteractArea" type="CollisionShape2D" parent="KnightHouseInteract"]
+shape = SubResource("CapsuleShape2D_hrleh")
+one_way_collision = true
+script = ExtResource("3_mb37k")
+
+[node name="KnightHouseDataStore" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_gm141")
+
+[node name="PlusBanner" parent="." instance=ExtResource("5_oqqwd")]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="KnightHouseInteract" to="KnightHouseInteract/KnightHouseInteractArea" method="_on_knight_house_body_entered"]
+[connection signal="create_pop_up" from="KnightHouseInteract/KnightHouseInteractArea" to="." method="_on_knight_house_interact_area_create_pop_up"]

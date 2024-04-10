@@ -15,7 +15,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(velocity.length())
 	if velocity.length()<0.01:
 		playerAnimatedSprite.animation = "idle"
 	else:

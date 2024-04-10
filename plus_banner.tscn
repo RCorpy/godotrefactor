@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://v6h7byfqfq6u"]
+
+[ext_resource type="Script" path="res://plus_banner.gd" id="1_ura5q"]
+[ext_resource type="Texture2D" uid="uid://cxc45rqadae0y" path="res://sprites/Banner_Horizontal.png" id="1_wgl4r"]
+[ext_resource type="Texture2D" uid="uid://ddcgdvwc348my" path="res://sprites/plus_sign.png" id="2_qoi2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2hyg"]
+size = Vector2(112.208, 121.821)
+
+[node name="PlusBanner" type="Area2D"]
+position = Vector2(0, -30)
+scale = Vector2(0.401042, 0.377604)
+script = ExtResource("1_ura5q")
+
+[node name="BannerHorizontal" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -5.29655)
+scale = Vector2(1, 1)
+texture = ExtResource("1_wgl4r")
+
+[node name="PlusSign" type="Sprite2D" parent="."]
+position = Vector2(-2.47955e-05, 13.4193)
+scale = Vector2(1.92, 2)
+texture = ExtResource("2_qoi2p")
+
+[node name="PlusBannerArea" type="CollisionShape2D" parent="."]
+position = Vector2(6.10352e-05, 5.29656)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h2hyg")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
