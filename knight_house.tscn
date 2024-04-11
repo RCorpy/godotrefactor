@@ -38,4 +38,7 @@ script = ExtResource("4_gm141")
 unique_name_in_owner = true
 
 [connection signal="body_entered" from="KnightHouseInteract" to="KnightHouseInteract/KnightHouseInteractArea" method="_on_knight_house_body_entered"]
+[connection signal="body_exited" from="KnightHouseInteract" to="KnightHouseInteract/KnightHouseInteractArea" method="_on_knight_house_interact_body_exited"]
 [connection signal="create_pop_up" from="KnightHouseInteract/KnightHouseInteractArea" to="." method="_on_knight_house_interact_area_create_pop_up"]
+[connection signal="remove_pop_up" from="KnightHouseInteract/KnightHouseInteractArea" to="." method="_on_knight_house_interact_area_remove_pop_up"]
+[connection signal="plus_sign_clicked" from="PlusBanner" to="." method="_on_plus_sign_clicked"]

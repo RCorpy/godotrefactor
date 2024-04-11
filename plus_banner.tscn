@@ -13,18 +13,19 @@ scale = Vector2(0.401042, 0.377604)
 script = ExtResource("1_ura5q")
 
 [node name="BannerHorizontal" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(4.76837e-07, -5.29655)
-scale = Vector2(1, 1)
 texture = ExtResource("1_wgl4r")
 
 [node name="PlusSign" type="Sprite2D" parent="."]
+process_mode = 4
+visible = false
 position = Vector2(-2.47955e-05, 13.4193)
 scale = Vector2(1.92, 2)
 texture = ExtResource("2_qoi2p")
 
 [node name="PlusBannerArea" type="CollisionShape2D" parent="."]
 position = Vector2(6.10352e-05, 5.29656)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h2hyg")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
