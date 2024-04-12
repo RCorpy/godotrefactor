@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dogo0a7xcyi6y"]
+
+[ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="1_3upxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvq4c"]
+size = Vector2(1149, 185)
+
+[node name="Menu" type="Area2D"]
+
+[node name="MenuCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 423.5)
+shape = SubResource("RectangleShape2D_nvq4c")
+
+[node name="Left" type="Sprite2D" parent="."]
+position = Vector2(-471, 423)
+texture = ExtResource("1_3upxq")
+
+[node name="Middle" type="Sprite2D" parent="."]
+position = Vector2(-161, 422)
+scale = Vector2(2.23958, 1)
+texture = ExtResource("1_3upxq")
+
+[node name="Right" type="Sprite2D" parent="."]
+position = Vector2(308, 422)
+scale = Vector2(2.82292, 1)
+texture = ExtResource("1_3upxq")
+
+[node name="LeftCenter" type="Node2D" parent="."]
+position = Vector2(-471, 424)
+
+[node name="CenterCenter" type="Node2D" parent="."]
+position = Vector2(-180, 425)
+
+[node name="RightCenter" type="Node2D" parent="."]
+position = Vector2(297, 427)

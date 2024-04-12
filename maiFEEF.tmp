@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bowg3jnb23g4x"]
+[gd_scene load_steps=8 format=3 uid="uid://bowg3jnb23g4x"]
 
 [ext_resource type="Texture2D" uid="uid://djao5th8no2hs" path="res://sprites/Tilemap_Flat.png" id="1_8704p"]
-[ext_resource type="Script" path="res://MainDataStore.gd" id="1_uj6ot"]
 [ext_resource type="PackedScene" uid="uid://dijea0kq8cvfa" path="res://player.tscn" id="2_gtswd"]
 [ext_resource type="PackedScene" uid="uid://dv2b14ns7tlte" path="res://knight_house.tscn" id="3_7wghq"]
 [ext_resource type="PackedScene" uid="uid://dogo0a7xcyi6y" path="res://menu.tscn" id="4_kpaay"]
@@ -539,8 +538,6 @@ sources/0 = SubResource("TileSetAtlasSource_3x0uh")
 [node name="Main" type="Node2D"]
 
 [node name="DataStore" type="Node2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_uj6ot")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_btwtn")
@@ -551,7 +548,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608,
 position = Vector2(129, 114)
 
 [node name="Menu" parent="Player" instance=ExtResource("4_kpaay")]
-position = Vector2(-3, -5)
+position = Vector2(0, -197)
 script = ExtResource("5_jor7t")
 
 [node name="KnightHouse" parent="." instance=ExtResource("3_7wghq")]
