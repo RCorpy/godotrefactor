@@ -44,7 +44,9 @@ func get_progress_bar(UpgradeToLevel):
 	get_node("KnightHouseSprite").texture = knight_house_data_store.LOWLEVELHOUSE
 
 func on_progress_bar_completed():
+	#create a completed popup
 	pass
 	
 func on_completed_click():
+	#allow to be upgraded again
 	pass

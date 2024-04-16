@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv2b14ns7tlte"]
+[gd_scene load_steps=10 format=3 uid="uid://dv2b14ns7tlte"]
 
 [ext_resource type="Script" path="res://knight_house.gd" id="1_1j4b6"]
 [ext_resource type="Texture2D" uid="uid://dmjpepexiq51e" path="res://sprites/House_Construction.png" id="1_de3oh"]
 [ext_resource type="Script" path="res://KnightHouseInteractArea.gd" id="3_mb37k"]
 [ext_resource type="Script" path="res://KnightHouseDataStore.gd" id="4_gm141"]
 [ext_resource type="PackedScene" uid="uid://v6h7byfqfq6u" path="res://plus_banner.tscn" id="5_oqqwd"]
+[ext_resource type="PackedScene" uid="uid://c6ursbvnq13xd" path="res://complete_banner.tscn" id="6_5dtkn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k045s"]
 radius = 62.0
@@ -13,6 +14,9 @@ height = 188.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrleh"]
 radius = 97.0
 height = 272.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja2lq"]
+bg_color = Color(0, 0.627451, 0.129412, 1)
 
 [node name="KnightHouse" type="StaticBody2D"]
 script = ExtResource("1_1j4b6")
@@ -34,11 +38,24 @@ script = ExtResource("3_mb37k")
 unique_name_in_owner = true
 script = ExtResource("4_gm141")
 
-[node name="PlusBanner" parent="." instance=ExtResource("5_oqqwd")]
+[node name="PlusBanner" parent="KnightHouseDataStore" instance=ExtResource("5_oqqwd")]
 unique_name_in_owner = true
+
+[node name="ProgressBar" type="ProgressBar" parent="KnightHouseDataStore"]
+offset_left = -50.0
+offset_top = -63.0
+offset_right = 52.0
+offset_bottom = -48.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ja2lq")
+value = 50.0
+show_percentage = false
+
+[node name="CompleteBanner" parent="KnightHouseDataStore" instance=ExtResource("6_5dtkn")]
+position = Vector2(-1, -31)
+scale = Vector2(0.55, 0.55)
 
 [connection signal="body_entered" from="KnightHouseInteract" to="KnightHouseInteract/KnightHouseInteractArea" method="_on_knight_house_body_entered"]
 [connection signal="body_exited" from="KnightHouseInteract" to="KnightHouseInteract/KnightHouseInteractArea" method="_on_knight_house_interact_body_exited"]
 [connection signal="create_pop_up" from="KnightHouseInteract/KnightHouseInteractArea" to="." method="_on_knight_house_interact_area_create_pop_up"]
 [connection signal="remove_pop_up" from="KnightHouseInteract/KnightHouseInteractArea" to="." method="_on_knight_house_interact_area_remove_pop_up"]
-[connection signal="plus_sign_clicked" from="PlusBanner" to="." method="_on_plus_sign_clicked"]
+[connection signal="plus_sign_clicked" from="KnightHouseDataStore/PlusBanner" to="." method="_on_plus_sign_clicked"]
