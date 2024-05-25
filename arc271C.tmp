@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://ffv6qonpmwid"]
+
+[ext_resource type="Texture2D" uid="uid://dmjpepexiq51e" path="res://sprites/House_Construction.png" id="1_030xe"]
+[ext_resource type="Script" path="res://archer_house.gd" id="1_nv21n"]
+[ext_resource type="Script" path="res://ArcherHouseDataStore.gd" id="3_ns7tr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_valhc"]
+radius = 62.0
+height = 188.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xwi6s"]
+radius = 100.0
+height = 306.0
+
+[node name="ArcherHouse" type="StaticBody2D"]
+script = ExtResource("1_nv21n")
+
+[node name="ArcherHouseCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_valhc")
+
+[node name="ArcherHouseSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_030xe")
+
+[node name="ArcherHouseInteract" type="Area2D" parent="."]
+
+[node name="ArcherHouseInteractArea" type="CollisionShape2D" parent="ArcherHouseInteract"]
+shape = SubResource("CapsuleShape2D_xwi6s")
+
+[node name="ArcherHouseDataStore" type="Node2D" parent="."]
+script = ExtResource("3_ns7tr")

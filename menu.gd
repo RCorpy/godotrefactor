@@ -16,7 +16,8 @@ func hide_menu():
 	
 
 
-func _on_knight_house_show_menu(boolean):
+func _on_knight_house_show_menu(boolean, nameOfNode):
+	print(nameOfNode)
 	if boolean:
 		leftSideSprite = data_store.KnightSprite.instantiate()
 		get_node("LeftCenter").add_child(leftSideSprite)

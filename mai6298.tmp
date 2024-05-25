@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bowg3jnb23g4x"]
+[gd_scene load_steps=11 format=3 uid="uid://bowg3jnb23g4x"]
 
 [ext_resource type="Texture2D" uid="uid://djao5th8no2hs" path="res://sprites/Tilemap_Flat.png" id="1_8704p"]
 [ext_resource type="Script" path="res://MainDataStore.gd" id="1_uj6ot"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dv2b14ns7tlte" path="res://knight_house.tscn" id="3_7wghq"]
 [ext_resource type="PackedScene" uid="uid://dogo0a7xcyi6y" path="res://menu.tscn" id="4_kpaay"]
 [ext_resource type="Script" path="res://menu.gd" id="5_jor7t"]
+[ext_resource type="PackedScene" uid="uid://ffv6qonpmwid" path="res://archer_house.tscn" id="7_h5ecq"]
+[ext_resource type="Script" path="res://archer_house.gd" id="8_3vtod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3x0uh"]
 texture = ExtResource("1_8704p")
@@ -559,10 +561,9 @@ script = ExtResource("5_jor7t")
 z_index = 1
 position = Vector2(414, 339)
 
-[node name="KnightHouse2" parent="." instance=ExtResource("3_7wghq")]
-z_index = 1
-position = Vector2(142, 341)
+[node name="ArcherHouse" parent="." instance=ExtResource("7_h5ecq")]
+position = Vector2(661, 328)
+script = ExtResource("8_3vtod")
 
 [connection signal="ready" from="Player/Menu" to="Player/Menu" method="_on_ready"]
 [connection signal="show_menu" from="KnightHouse" to="Player/Menu" method="_on_knight_house_show_menu"]
-[connection signal="show_menu" from="KnightHouse2" to="Player/Menu" method="_on_knight_house_show_menu"]

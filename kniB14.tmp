@@ -41,6 +41,7 @@ script = ExtResource("4_gm141")
 
 [node name="PlusBanner" parent="KnightHouseDataStore" instance=ExtResource("5_oqqwd")]
 unique_name_in_owner = true
+visible = false
 
 [node name="ProgressBar" type="ProgressBar" parent="KnightHouseDataStore"]
 unique_name_in_owner = true
@@ -55,6 +56,7 @@ script = ExtResource("6_kcct6")
 
 [node name="CompleteBanner" parent="KnightHouseDataStore" instance=ExtResource("6_5dtkn")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-1, -31)
 scale = Vector2(0.55, 0.55)
 
@@ -62,8 +64,6 @@ scale = Vector2(0.55, 0.55)
 [connection signal="body_exited" from="KnightHouseInteract" to="KnightHouseInteract/KnightHouseInteractArea" method="_on_knight_house_interact_body_exited"]
 [connection signal="create_pop_up" from="KnightHouseInteract/KnightHouseInteractArea" to="." method="_on_knight_house_interact_area_create_pop_up"]
 [connection signal="remove_pop_up" from="KnightHouseInteract/KnightHouseInteractArea" to="." method="_on_knight_house_interact_area_remove_pop_up"]
-[connection signal="getHouseData" from="KnightHouseDataStore" to="." method="_on_knight_house_data_store_get_house_data"]
-[connection signal="ready" from="KnightHouseDataStore" to="KnightHouseDataStore" method="_on_ready"]
 [connection signal="plus_sign_clicked" from="KnightHouseDataStore/PlusBanner" to="." method="_on_plus_sign_clicked"]
 [connection signal="finishedBar" from="KnightHouseDataStore/ProgressBar" to="." method="_on_progress_bar_finished_bar"]
 [connection signal="complete_sign_clicked" from="KnightHouseDataStore/CompleteBanner" to="." method="_on_complete_banner_complete_sign_clicked"]

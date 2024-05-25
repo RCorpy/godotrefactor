@@ -1,0 +1,148 @@
+[gd_scene load_steps=22 format=3 uid="uid://c3kr2yihvo16l"]
+
+[ext_resource type="Texture2D" uid="uid://dmy4gieba5bp5" path="res://sprites/Warrior_Blue.png" id="1_12d5c"]
+[ext_resource type="Texture2D" uid="uid://fhym8pnta6d3" path="res://Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="1_uaejy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrmht"]
+atlas = ExtResource("1_uaejy")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feffe"]
+atlas = ExtResource("1_uaejy")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3gco"]
+atlas = ExtResource("1_uaejy")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qicoy"]
+atlas = ExtResource("1_uaejy")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hxmv"]
+atlas = ExtResource("1_uaejy")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb4qh"]
+atlas = ExtResource("1_uaejy")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv8sm"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(0, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x3jx"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(192, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikujc"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(384, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1iu8"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(576, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we3xx"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(768, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63hqj"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(960, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23qmb"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(0, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcp6b"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(192, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7eie"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(384, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy0ut"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(576, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl7ln"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(768, 1152, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujq1e"]
+atlas = ExtResource("1_12d5c")
+region = Rect2(960, 1152, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6e27n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrmht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feffe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3gco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qicoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hxmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb4qh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv8sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x3jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikujc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1iu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we3xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63hqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23qmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcp6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7eie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy0ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl7ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujq1e")
+}],
+"loop": true,
+"name": &"roundhouse",
+"speed": 9.0
+}]
+
+[node name="KnightSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_6e27n")
+animation = &"idle"
+autoplay = "idle"
