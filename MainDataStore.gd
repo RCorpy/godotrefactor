@@ -50,5 +50,7 @@ func getCurrentSprite():
 			return KnightSprite
 		"ArcherHouse":
 			return ArcherSprite
+		"KnightHouse2":
+			return ArcherSprite
 		_:
 			return KnightSprite

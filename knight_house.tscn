@@ -44,6 +44,7 @@ unique_name_in_owner = true
 
 [node name="ProgressBar" type="ProgressBar" parent="KnightHouseDataStore"]
 unique_name_in_owner = true
+visible = false
 offset_left = -50.0
 offset_top = -63.0
 offset_right = 52.0
