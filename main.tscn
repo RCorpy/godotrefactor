@@ -551,6 +551,14 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608,
 [node name="Player" parent="." instance=ExtResource("2_gtswd")]
 position = Vector2(129, 114)
 
+[node name="ControlUI" type="TextEdit" parent="Player"]
+unique_name_in_owner = true
+offset_left = -564.0
+offset_top = -314.0
+offset_right = -488.0
+offset_bottom = -268.0
+text = "0 Ore"
+
 [node name="Menu" parent="Player" instance=ExtResource("4_kpaay")]
 z_index = 2
 position = Vector2(-3, -5)
@@ -570,3 +578,5 @@ position = Vector2(667, 112)
 [connection signal="ready" from="Player/Menu" to="Player/Menu" method="_on_ready"]
 [connection signal="show_menu" from="KnightHouse" to="Player/Menu" method="_on_knight_house_show_menu"]
 [connection signal="show_menu" from="KnightHouse2" to="Player/Menu" method="_on_knight_house_show_menu"]
+[connection signal="startMining" from="Mine" to="DataStore" method="_on_mine_start_mining"]
+[connection signal="stopMining" from="Mine" to="DataStore" method="_on_mine_stop_mining"]

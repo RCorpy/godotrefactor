@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var ControlUi = %ControlUI
+
+var isMining= false
+var Ore = 0
 var currentBuilding = "KnightHouse"
 
 const KnightSprite = preload("res://knight_sprite.tscn")
@@ -54,3 +58,17 @@ func getCurrentSprite():
 			return ArcherSprite
 		_:
 			return KnightSprite
+
+
+func _on_mine_start_mining():
+	isMining = true
+
+
+func _on_mine_stop_mining():
+	isMining = false
+
+func _process(delta):
+	if isMining:
+		Ore += delta
+		
+		ControlUi.text = str(round(Ore)) + " Ore"
