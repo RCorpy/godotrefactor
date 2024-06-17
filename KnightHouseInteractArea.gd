@@ -12,8 +12,6 @@ func _on_knight_house_body_entered(body):
 	if body.has_method("_input"):
 		#get Specific data if not yet retrieved
 		create_pop_up.emit()
-		if knight_house_data_store.updated == false:
-			knight_house_data_store.get_data_ready()
 		
 		
 

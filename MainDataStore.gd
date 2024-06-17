@@ -26,7 +26,15 @@ var KnightHouse = {
 	"level" : 1,
 	"maxLevel": 4,
 	"upgradeTimes": [3,7, 15, 18],
+	"orePrice": [5,10,15,20],
 	"sprites": [FOUNDATIONSPRITE, LOWLEVELHOUSE, LOWLEVELHOUSE, HIGHLEVELHOUSE, HIGHLEVELHOUSE]
+}
+
+var Mine = {
+	"level": 4,
+	"upgradeTimes": [5,10,15],
+	"orePrice": [5,10,15],
+	"maxLevel": 3
 }
 
 var KnightHouse2 = {
@@ -35,17 +43,29 @@ var KnightHouse2 = {
 	"level" : 1,
 	"maxLevel": 2,
 	"upgradeTimes": [3,7],
+	"orePrice": [15,20],
 	"sprites": [FOUNDATIONSPRITE, HIGHLEVELHOUSE]
 }
 
-
-
 #Archer House
 
-var ArcherHouseVars = {
+var ArcherHouse = {
 	"maxLevel": 4,
 	"upgradeTimes": [3,7, 15, 18]
 }
+
+func getVariable(variable):
+	match variable:
+		"KnightHouse":
+			return KnightHouse
+		"ArcherHouse":
+			return ArcherHouse
+		"KnightHouse2":
+			return KnightHouse2
+		"Mine":
+			return Mine
+		_:
+			return KnightSprite
 
 #for Menu
 func getCurrentSprite():
@@ -59,16 +79,23 @@ func getCurrentSprite():
 		_:
 			return KnightSprite
 
+#Upgrade functions
+
+func check_upgrade_req(node_name):
+	print(str(getVariable(node_name).level) + "this is current level")
+	
+#For mining
 
 func _on_mine_start_mining():
 	isMining = true
-
 
 func _on_mine_stop_mining():
 	isMining = false
 
 func _process(delta):
 	if isMining:
-		Ore += delta
-		
+		Ore += delta * Mine["level"]
 		ControlUi.text = str(round(Ore)) + " Ore"
+		
+func updateControlUi():
+	ControlUi.text = str(round(Ore)) + " Ore"
