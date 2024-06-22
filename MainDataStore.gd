@@ -18,7 +18,11 @@ const FOUNDATIONSPRITE = preload("res://sprites/House_Construction.png")
 const LOWLEVELHOUSE = preload("res://sprites/Goblin_House.png")
 const HIGHLEVELHOUSE = preload("res://sprites/House_Blue.png")
 
-
+const CASTLEFOUNDATION = preload("res://sprites/castlebase.png")
+const CASTLEPURPLE = preload("res://sprites/castlepurple.png")
+const CASTLEYELLOW = preload("res://sprites/castleyellow.png")
+const CASTLERED = preload("res://sprites/castlered.png")
+const CASTLEBLUE = preload("res://sprites/castleblue.png")
 
 var KnightHouse = {
 	"status": "idle",
@@ -47,6 +51,15 @@ var KnightHouse2 = {
 	"sprites": [FOUNDATIONSPRITE, HIGHLEVELHOUSE]
 }
 
+var Castle = {
+	"status": "idle",
+	"progressValue": 0,
+	"level" : 1,
+	"maxLevel": 2,
+	"upgradeTimes": [3,7],
+	"orePrice": [15,20],
+	"sprites": [CASTLEFOUNDATION, CASTLEBLUE]
+}
 #Archer House
 
 var ArcherHouse = {
@@ -62,6 +75,8 @@ func getVariable(variable):
 			return ArcherHouse
 		"KnightHouse2":
 			return KnightHouse2
+		"Castle":
+			return Castle
 		"Mine":
 			return Mine
 		_:
@@ -76,6 +91,8 @@ func getCurrentSprite():
 			return ArcherSprite
 		"KnightHouse2":
 			return ArcherSprite
+		"Castle":
+			return KnightSprite
 		_:
 			return KnightSprite
 
@@ -99,3 +116,9 @@ func _process(delta):
 		
 func updateControlUi():
 	ControlUi.text = str(round(Ore)) + " Ore"
+
+
+
+
+
+	
