@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://uypwa3sk3rhg"]
+
+[ext_resource type="Texture2D" uid="uid://63cer61iopms" path="res://sprites/WoodTowerBlue.png" id="1_a53i5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_351jc"]
+atlas = ExtResource("1_a53i5")
+region = Rect2(0, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vycq"]
+atlas = ExtResource("1_a53i5")
+region = Rect2(256, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec2eb"]
+atlas = ExtResource("1_a53i5")
+region = Rect2(512, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3am5"]
+atlas = ExtResource("1_a53i5")
+region = Rect2(768, 0, 256, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhtjh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_351jc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vycq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec2eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3am5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WoodTowerBlueSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jhtjh")
+autoplay = "default"
+frame_progress = 0.389225

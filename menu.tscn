@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dogo0a7xcyi6y"]
+[gd_scene load_steps=5 format=3 uid="uid://dogo0a7xcyi6y"]
 
 [ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="1_3upxq"]
+[ext_resource type="Script" path="res://menu.gd" id="1_pquru"]
+[ext_resource type="Script" path="res://NextWaveButton.gd" id="3_5auif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvq4c"]
 size = Vector2(1149, 185)
 
 [node name="Menu" type="Area2D"]
+script = ExtResource("1_pquru")
 
 [node name="MenuCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 423.5)
@@ -33,3 +36,13 @@ position = Vector2(-180, 425)
 
 [node name="RightCenter" type="Node2D" parent="."]
 position = Vector2(297, 427)
+
+[node name="NextWaveButton" type="Button" parent="."]
+offset_left = -236.0
+offset_top = 400.0
+offset_right = -124.0
+offset_bottom = 445.0
+text = "Next Enemy	"
+script = ExtResource("3_5auif")
+
+[connection signal="pressed" from="NextWaveButton" to="." method="_on_next_wave_button_pressed"]

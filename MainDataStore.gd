@@ -8,6 +8,9 @@ var currentBuilding = "KnightHouse"
 
 const KnightSprite = preload("res://knight_sprite.tscn")
 const ArcherSprite = preload("res://archer_sprite.tscn")
+const CastleSprite = preload("res://CastleSprite.tscn")
+const TowerSprite = preload("res://TowerSprite.tscn")
+const SheppardSprite = preload("res://ShepperdSprite.tscn")
 
 #for Houses
 
@@ -23,6 +26,15 @@ const CASTLEPURPLE = preload("res://sprites/castlepurple.png")
 const CASTLEYELLOW = preload("res://sprites/castleyellow.png")
 const CASTLERED = preload("res://sprites/castlered.png")
 const CASTLEBLUE = preload("res://sprites/castleblue.png")
+
+const TOWERFOUNDATION = preload("res://sprites/TowerFoundation.png")
+const TOWERPURPLE = preload("res://sprites/TowerPurple.png")
+const TOWERYELLOW = preload("res://sprites/TowerYellow.png")
+const TOWERRED = preload("res://sprites/TowerRed.png")
+const TOWERBLUE = preload("res://sprites/TowerBlue.png")
+
+const WOODTOWERFOUNDATION = preload("res://sprites/WoodTowerFoundation.png")
+const WOODTOWERBLUE = preload("res://WoodTowerBlueSprite.tscn")
 
 var KnightHouse = {
 	"status": "idle",
@@ -55,11 +67,32 @@ var Castle = {
 	"status": "idle",
 	"progressValue": 0,
 	"level" : 1,
+	"maxLevel": 5,
+	"upgradeTimes": [3,7,3,3,3],
+	"orePrice": [15,20,3,3,3],
+	"sprites": [CASTLEFOUNDATION, CASTLEBLUE, CASTLEPURPLE, CASTLEYELLOW, CASTLERED]
+}
+
+var Tower = {
+	"status": "idle",
+	"progressValue": 0,
+	"level" : 1,
 	"maxLevel": 2,
 	"upgradeTimes": [3,7],
 	"orePrice": [15,20],
-	"sprites": [CASTLEFOUNDATION, CASTLEBLUE]
+	"sprites": [TOWERFOUNDATION, TOWERBLUE]
 }
+
+var Sheppard = {
+	"status": "idle",
+	"progressValue": 0,
+	"level" : 1,
+	"maxLevel": 2,
+	"upgradeTimes": [3,7],
+	"orePrice": [15,20],
+	"sprites": [FOUNDATIONSPRITE, HIGHLEVELHOUSE]
+}
+
 #Archer House
 
 var ArcherHouse = {
@@ -77,8 +110,12 @@ func getVariable(variable):
 			return KnightHouse2
 		"Castle":
 			return Castle
+		"Tower":
+			return Tower
 		"Mine":
 			return Mine
+		"Sheppard":
+			return Sheppard
 		_:
 			return KnightSprite
 
@@ -92,7 +129,11 @@ func getCurrentSprite():
 		"KnightHouse2":
 			return ArcherSprite
 		"Castle":
-			return KnightSprite
+			return CastleSprite
+		"Tower":
+			return TowerSprite
+		"Sheppard":
+			return SheppardSprite
 		_:
 			return KnightSprite
 

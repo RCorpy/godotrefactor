@@ -1,8 +1,11 @@
 extends Area2D
 
 @onready var data_store = %DataStore
+@onready var fight = $"../Fight"
 
 var leftSideSprite = ""
+var middleMenu=""
+var rightMenu=""
 var initial_position = Vector2(0,0)
 
 func show_menu():
@@ -15,6 +18,14 @@ func hide_menu():
 		get_node("LeftCenter").remove_child(n)
 	
 
+func updateMiddlePart(nameOfNode):
+	if nameOfNode == "Castle":
+		get_node("NextWaveButton").visible = true
+	else:
+		get_node("NextWaveButton").visible = false
+	
+func updateRightPart(nameOfNode):
+	pass
 
 func _on_knight_house_show_menu(boolean, nameOfNode):
 	print(nameOfNode)
@@ -22,6 +33,8 @@ func _on_knight_house_show_menu(boolean, nameOfNode):
 	if boolean:
 		leftSideSprite = data_store.getCurrentSprite().instantiate()
 		get_node("LeftCenter").add_child(leftSideSprite)
+		updateMiddlePart(nameOfNode)
+		updateRightPart(nameOfNode)
 		show_menu()
 		print(boolean)
 	else:
@@ -31,3 +44,8 @@ func _on_knight_house_show_menu(boolean, nameOfNode):
 
 func _on_ready():
 	initial_position = position
+
+
+
+func _on_next_wave_button_pressed():
+	fight.visible= true

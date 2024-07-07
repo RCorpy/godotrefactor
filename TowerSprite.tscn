@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cov3xdyeh3uut"]
+
+[ext_resource type="Texture2D" uid="uid://44b1mclb62rj" path="res://sprites/TowerBlue.png" id="1_u2r7c"]
+
+[node name="TowerSprite" type="Sprite2D"]
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("1_u2r7c")

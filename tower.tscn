@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnievkl0l3771"]
+
+[ext_resource type="PackedScene" uid="uid://dv2b14ns7tlte" path="res://knight_house.tscn" id="1_a0ow8"]
+[ext_resource type="Texture2D" uid="uid://6whoaqg3ccmc" path="res://sprites/TowerFoundation.png" id="2_weolk"]
+
+[node name="KnightHouse" instance=ExtResource("1_a0ow8")]
+
+[node name="KnightHouseCollision" parent="." index="0"]
+scale = Vector2(1.1, 1.1)
+
+[node name="KnightHouseSprite" parent="." index="1"]
+texture = ExtResource("2_weolk")
+
+[node name="KnightHouseInteractArea" parent="KnightHouseInteract" index="0"]
+scale = Vector2(1.1, 1.1)

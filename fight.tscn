@@ -1,0 +1,227 @@
+[gd_scene load_steps=25 format=3 uid="uid://s1ue4heunbta"]
+
+[ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="1_mn0pk"]
+[ext_resource type="Texture2D" uid="uid://dmy4gieba5bp5" path="res://sprites/Warrior_Blue.png" id="2_em4ij"]
+[ext_resource type="Texture2D" uid="uid://b3l2e54x576ca" path="res://sprites/TNT_Blue.png" id="3_77ob0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf8jk"]
+atlas = ExtResource("2_em4ij")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_438om"]
+atlas = ExtResource("2_em4ij")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f233w"]
+atlas = ExtResource("2_em4ij")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsp0m"]
+atlas = ExtResource("2_em4ij")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka0ex"]
+atlas = ExtResource("2_em4ij")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1jpo"]
+atlas = ExtResource("2_em4ij")
+region = Rect2(960, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbewx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf8jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_438om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f233w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsp0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka0ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1jpo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciyt1"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nau88"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re3qd"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as70v"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaikc"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjm8r"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(960, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnv7o"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(1152, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5lnb"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgnfe"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvlun"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h2ek"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6pfr"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oljl"]
+atlas = ExtResource("3_77ob0")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrhox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciyt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nau88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re3qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as70v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaikc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjm8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnv7o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5lnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgnfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvlun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h2ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6pfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oljl")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Fight" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.05176e-05, 2)
+scale = Vector2(3.85417, 2.61979)
+texture = ExtResource("1_mn0pk")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-96, -43)
+sprite_frames = SubResource("SpriteFrames_mbewx")
+autoplay = "default"
+frame_progress = 0.141054
+
+[node name="EnemySprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, -37)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_yrhox")
+autoplay = "default"
+frame_progress = 0.244767
+
+[node name="ControlPlayer" type="TextEdit" parent="."]
+offset_left = -229.0
+offset_top = 24.0
+offset_right = -14.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Power: 1
+Health: 1
+"
+
+[node name="ControlEnemy" type="TextEdit" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 24.0
+offset_right = 247.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Power: 1
+Health: 1"
+
+[node name="Victory" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -192.0
+offset_top = -211.0
+offset_right = 193.0
+offset_bottom = -128.0
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]VICTORY[/center]"
+
+[node name="Defeat" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -188.0
+offset_top = -200.0
+offset_right = 196.0
+offset_bottom = -120.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]DEFEAT[/center]"
