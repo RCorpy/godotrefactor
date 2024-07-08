@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bowg3jnb23g4x"]
+[gd_scene load_steps=12 format=3 uid="uid://bowg3jnb23g4x"]
 
 [ext_resource type="Texture2D" uid="uid://djao5th8no2hs" path="res://sprites/Tilemap_Flat.png" id="1_8704p"]
 [ext_resource type="Script" path="res://MainDataStore.gd" id="1_uj6ot"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cnnv3a86c4wjj" path="res://mine.tscn" id="7_dme8y"]
 [ext_resource type="PackedScene" uid="uid://bnievkl0l3771" path="res://tower.tscn" id="9_8yby1"]
 [ext_resource type="PackedScene" uid="uid://s1ue4heunbta" path="res://fight.tscn" id="10_revpb"]
-[ext_resource type="Script" path="res://fight.gd" id="11_up14i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3x0uh"]
 texture = ExtResource("1_8704p")
@@ -566,7 +565,6 @@ text = "0 Ore"
 visible = false
 z_index = 6
 position = Vector2(-2, 0)
-script = ExtResource("11_up14i")
 
 [node name="Menu" parent="Player" instance=ExtResource("4_kpaay")]
 z_index = 2
@@ -592,6 +590,8 @@ position = Vector2(664, 332)
 [node name="Sheppard" parent="." instance=ExtResource("3_7wghq")]
 position = Vector2(911, 335)
 
+[connection signal="game_over" from="Player/Fight" to="DataStore" method="_on_fight_game_over"]
+[connection signal="victory" from="Player/Fight" to="DataStore" method="_on_fight_victory"]
 [connection signal="ready" from="Player/Menu" to="Player/Menu" method="_on_ready"]
 [connection signal="show_menu" from="KnightHouse" to="Player/Menu" method="_on_knight_house_show_menu"]
 [connection signal="show_menu" from="KnightHouse2" to="Player/Menu" method="_on_knight_house_show_menu"]

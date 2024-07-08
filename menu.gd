@@ -21,6 +21,7 @@ func hide_menu():
 func updateMiddlePart(nameOfNode):
 	if nameOfNode == "Castle":
 		get_node("NextWaveButton").visible = true
+		
 	else:
 		get_node("NextWaveButton").visible = false
 	
@@ -49,3 +50,5 @@ func _on_ready():
 
 func _on_next_wave_button_pressed():
 	fight.visible= true
+	fight.startTimer()
+	fight.rewriteStats()

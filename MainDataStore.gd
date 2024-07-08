@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var ControlUi = %ControlUI
 
+
 var isMining= false
 var Ore = 0
 var currentBuilding = "KnightHouse"
@@ -163,3 +164,11 @@ func updateControlUi():
 
 
 	
+
+
+func _on_fight_victory(reward):
+	Ore = Ore + reward
+	updateControlUi()
+
+func _on_fight_game_over():
+	pass # Replace with function body.
