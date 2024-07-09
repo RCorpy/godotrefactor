@@ -12,12 +12,22 @@ var thisData
 
 
 func check_upgrade_req():
+	#Do you have the castle level?
+	print("castle level" + str(globalDataStore.Castle.level) + str(globalDataStore.checkBuiltBuildings())+ str(globalDataStore.Castle.level <= globalDataStore.checkBuiltBuildings()))
+	print("resources" + str(globalDataStore.Ore >= thisData.orePrice[thisData.level - 1]))
+	if get_name() == "Castle":
+		print("its castle, ignore castle level req")
+	elif globalDataStore.Castle.level - 1 <= globalDataStore.checkBuiltBuildings():
+		print("ERROR, you dont have castle level")
+		return false
+	#Are there resources?
 	if globalDataStore.Ore >= thisData.orePrice[thisData.level - 1]:
 		globalDataStore.Ore -= thisData.orePrice[thisData.level - 1]
 		globalDataStore.updateControlUi()
-		#Need to show message when you dont have Ore
 		return true
 	else:
+		#Need to show message when you dont have Ore
+		print("ERROR, you dont have ore")
 		return false
 
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://s1ue4heunbta"]
+[gd_scene load_steps=35 format=3 uid="uid://s1ue4heunbta"]
 
 [ext_resource type="Script" path="res://fight.gd" id="1_6egnh"]
 [ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="1_mn0pk"]
 [ext_resource type="Texture2D" uid="uid://dmy4gieba5bp5" path="res://sprites/Warrior_Blue.png" id="2_em4ij"]
 [ext_resource type="Texture2D" uid="uid://b3l2e54x576ca" path="res://sprites/TNT_Blue.png" id="3_77ob0"]
+[ext_resource type="Texture2D" uid="uid://cqbra6nn760lm" path="res://sprites/Fire.png" id="5_8ryyf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gf8jk"]
 atlas = ExtResource("2_em4ij")
@@ -159,6 +160,63 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3ai4"]
+atlas = ExtResource("5_8ryyf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5od7k"]
+atlas = ExtResource("5_8ryyf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwdvv"]
+atlas = ExtResource("5_8ryyf")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3fb1"]
+atlas = ExtResource("5_8ryyf")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lguux"]
+atlas = ExtResource("5_8ryyf")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3s67"]
+atlas = ExtResource("5_8ryyf")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j52ed"]
+atlas = ExtResource("5_8ryyf")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnl6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ai4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5od7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwdvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3fb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lguux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3s67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j52ed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
 [node name="Fight" type="Node2D"]
 script = ExtResource("1_6egnh")
 
@@ -240,6 +298,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "CONTINUE"
+
+[node name="FireSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(74, -41)
+sprite_frames = SubResource("SpriteFrames_cnl6l")
+autoplay = "default"
+frame_progress = 0.174596
 
 [connection signal="timeout" from="CombatTimer" to="." method="_on_combat_timer_timeout"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

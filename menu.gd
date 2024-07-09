@@ -50,5 +50,8 @@ func _on_ready():
 
 func _on_next_wave_button_pressed():
 	fight.visible= true
+	fight.createEnemy()
+	fight.adjustForRangedPower()
+	$"../../Mine".mineWork()
 	fight.startTimer()
 	fight.rewriteStats()

@@ -16,61 +16,69 @@ var round = 1
 #player stats
 var power = 0
 var ranged = 0
+var maxHealth = 10
 var health = 10
 var towerHealing = 0
+var defense = 0 
+
+func getDefense():
+	defense = data_store.Sheppard.level - 1
+	return defense
 
 func getPower():
 	power = data_store.KnightHouse.level
 	return power
 
 func getRanged():
-	ranged = data_store.KnightHouse2.level
+	ranged = data_store.KnightHouse2.level - 1
 	return ranged	
 
 func getTowerHealing():
-	towerHealing = data_store.Tower.level
+	towerHealing = data_store.Tower.level - 1
 	return towerHealing
 
 func modifyHealth(plus, minus):
 	health = health + plus - minus
+	if health > maxHealth:
+		health = maxHealth
 	return health
 
 
 #enemies
 
-var enemies = [
-	#enemy 1
-	{
-	"power": 1,
-	"health": 2,
-	"sprite": "none",
-	"reward": 100
-},
-#enemy 2
-	{
-	"power": 2,
-	"health": 4,
-	"sprite": "none",
-	"reward": 200
-},
-#enemy 3
-	{
-	"power": 4,
-	"health": 8,
+var currentEnemy = {
+	"power": 15,
+	"health": 30,
 	"sprite": "none",
 	"reward": 400
-},
-]
+}
 
+func createEnemy():
+	currentEnemy = {
+		"power": round * 1,
+		"health": round * 2,
+		"sprite": "none",
+		"reward": round * 20
+	}
+	
+	return {
+		"power": round * 1,
+		"health": round * 2,
+		"sprite": "none",
+		"reward": round * 20
+	}
+
+func adjustForRangedPower():
+	currentEnemy.health = currentEnemy.health * (1 - 0.1*getRanged())
 
 func _on_combat_timer_timeout():
 	#print player stats
 	rewriteStats()
 	
 	#player attack
-	enemies[round-1].health -= getPower()
+	currentEnemy.health -= getPower()
 	#enemy attack
-	modifyHealth(0, enemies[round-1].power)
+	modifyHealth(0, currentEnemy.power - getDefense())
 	
 	#check for end of combat
 	#player death
@@ -82,12 +90,14 @@ func _on_combat_timer_timeout():
 		continue_button.visible = true
 		return "Game Over"
 	#enemy death
-	elif enemies[round-1].health <1:
+	elif currentEnemy.health <1:
 		combat_timer.stop()
 		rewriteStats()
-		emit_signal("victory", enemies[round-1].reward)
+		emit_signal("victory", currentEnemy.reward)
 		success.visible = true
 		continue_button.visible = true
+		$FireSprite.visible = true
+		$EnemySprite.visible = false
 		return "Victory"
 	else:
 		print("combat turn")
@@ -99,20 +109,20 @@ func startTimer():
 
 
 func _on_continue_button_pressed():
+	$FireSprite.visible = false
+	$EnemySprite.visible = true
+	failure.visible = false
+	success.visible = false
+	visible = false
 	if failure.visible == true:
-		failure.visible = false
-		success.visible = false
-		visible = false
 		print("defeated")
 	else:
-		failure.visible = false
-		success.visible = false
-		visible = false
 		round = round + 1
+		modifyHealth(getTowerHealing(),0)
 		print("victorious")
 		
 func rewriteStats():
 	control_player.text = "Power: %d
 Health: %d" % [getPower(), health]
 	control_enemy.text = "Power: %d
-Health: %d" % [enemies[round-1].power, enemies[round-1].health]
+Health: %d" % [currentEnemy.power - getDefense(), currentEnemy.health]

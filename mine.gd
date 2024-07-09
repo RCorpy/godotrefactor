@@ -17,3 +17,6 @@ func _on_mine_interact_body_exited(body):
 	if(body.get_name()=="Player"):
 		get_node("MineSprite").texture = GoldMineOffSprite
 		stopMining.emit()
+
+func mineWork():
+	%DataStore.Ore = %DataStore.Ore + %DataStore.Mine.level * 10
