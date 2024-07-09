@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnnv3a86c4wjj"]
+[gd_scene load_steps=7 format=3 uid="uid://cnnv3a86c4wjj"]
 
 [ext_resource type="Script" path="res://mine.gd" id="1_ml3co"]
 [ext_resource type="Texture2D" uid="uid://0t3fc2oyshe5" path="res://sprites/GoldMineOff.png" id="1_ontgc"]
+[ext_resource type="PackedScene" uid="uid://v6h7byfqfq6u" path="res://plus_banner.tscn" id="3_0xgif"]
+[ext_resource type="PackedScene" uid="uid://c6ursbvnq13xd" path="res://complete_banner.tscn" id="4_cjun1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c3mi0"]
 radius = 97.0
@@ -27,6 +29,16 @@ one_way_collision = true
 [node name="MineAreaCollision" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xlqkx")
+
+[node name="MineDataStore" type="Node2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="MineDataStore"]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="PlusBanner" parent="MineDataStore" instance=ExtResource("3_0xgif")]
+
+[node name="CompleteBanner" parent="MineDataStore" instance=ExtResource("4_cjun1")]
 
 [connection signal="body_entered" from="MineInteract" to="." method="_on_mine_interact_body_entered"]
 [connection signal="body_exited" from="MineInteract" to="." method="_on_mine_interact_body_exited"]
