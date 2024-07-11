@@ -15,7 +15,7 @@ func check_upgrade_req():
 	#Do you have the castle level?
 	print("castle level" + str(globalDataStore.Castle.level) + str(globalDataStore.checkBuiltBuildings())+ str(globalDataStore.Castle.level <= globalDataStore.checkBuiltBuildings()))
 	print("resources" + str(globalDataStore.Ore >= thisData.orePrice[thisData.level - 1]))
-	if get_name() == "Castle":
+	if get_name() == "Castle" || globalDataStore[get_name()].level > 1:
 		print("its castle, ignore castle level req")
 	elif globalDataStore.Castle.level - 1 <= globalDataStore.checkBuiltBuildings():
 		print("ERROR, you dont have castle level")

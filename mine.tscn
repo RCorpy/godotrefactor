@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnnv3a86c4wjj"]
+[gd_scene load_steps=8 format=3 uid="uid://cnnv3a86c4wjj"]
 
 [ext_resource type="Script" path="res://mine.gd" id="1_ml3co"]
 [ext_resource type="Texture2D" uid="uid://0t3fc2oyshe5" path="res://sprites/GoldMineOff.png" id="1_ontgc"]
 [ext_resource type="PackedScene" uid="uid://v6h7byfqfq6u" path="res://plus_banner.tscn" id="3_0xgif"]
+[ext_resource type="Script" path="res://ProgressBarMine.gd" id="3_wpm3k"]
 [ext_resource type="PackedScene" uid="uid://c6ursbvnq13xd" path="res://complete_banner.tscn" id="4_cjun1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c3mi0"]
@@ -33,12 +34,23 @@ shape = SubResource("CapsuleShape2D_xlqkx")
 [node name="MineDataStore" type="Node2D" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="MineDataStore"]
-offset_right = 4.0
-offset_bottom = 27.0
+visible = false
+offset_left = -65.0
+offset_top = -87.0
+offset_right = 65.0
+offset_bottom = -60.0
+show_percentage = false
+script = ExtResource("3_wpm3k")
 
 [node name="PlusBanner" parent="MineDataStore" instance=ExtResource("3_0xgif")]
+position = Vector2(-1, -100)
 
 [node name="CompleteBanner" parent="MineDataStore" instance=ExtResource("4_cjun1")]
+position = Vector2(-1, -104)
+scale = Vector2(0.55, 0.55)
 
 [connection signal="body_entered" from="MineInteract" to="." method="_on_mine_interact_body_entered"]
 [connection signal="body_exited" from="MineInteract" to="." method="_on_mine_interact_body_exited"]
+[connection signal="finishedBar" from="MineDataStore/ProgressBar" to="." method="_on_progress_bar_finished_bar"]
+[connection signal="plus_sign_clicked" from="MineDataStore/PlusBanner" to="." method="_on_plus_banner_plus_sign_clicked"]
+[connection signal="complete_sign_clicked" from="MineDataStore/CompleteBanner" to="." method="_on_complete_banner_complete_sign_clicked"]

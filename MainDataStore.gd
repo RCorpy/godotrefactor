@@ -41,6 +41,8 @@ const TOWERBLUE = preload("res://sprites/TowerBlue.png")
 const WOODTOWERFOUNDATION = preload("res://sprites/WoodTowerFoundation.png")
 const WOODTOWERBLUE = preload("res://WoodTowerBlueSprite.tscn")
 
+const MINESPRITE = preload("res://mine_animated_sprite.tscn")
+
 var KnightHouse = {
 	"status": "idle",
 	"progressValue": 0,
@@ -52,10 +54,13 @@ var KnightHouse = {
 }
 
 var Mine = {
+	"status": "idle",
+	"progressValue": 0,
 	"level": 1,
+	"maxLevel": 9,
 	"upgradeTimes": [5,5,5,5,5,5,5,5,5],
 	"orePrice": [5,10,15,20,25,30,35,40,45],
-	"maxLevel": 9
+	"sprites": [MINESPRITE, MINESPRITE, MINESPRITE, MINESPRITE, MINESPRITE, MINESPRITE, MINESPRITE, MINESPRITE, MINESPRITE]
 }
 
 var KnightHouse2 = {
@@ -131,6 +136,8 @@ func getCurrentSprite():
 			return TowerSprite
 		"Sheppard":
 			return SheppardSprite
+		"Mine":
+			return MINESPRITE
 		_:
 			return KnightSprite
 

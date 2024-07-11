@@ -55,3 +55,17 @@ func _on_next_wave_button_pressed():
 	$"../../Mine".mineWork()
 	fight.startTimer()
 	fight.rewriteStats()
+
+
+func _on_mine_show_menu(boolean, nameOfNode):
+	print(nameOfNode)
+	data_store.currentBuilding = nameOfNode
+	if boolean:
+		leftSideSprite = data_store.getCurrentSprite().instantiate()
+		get_node("LeftCenter").add_child(leftSideSprite)
+		updateMiddlePart(nameOfNode)
+		updateRightPart(nameOfNode)
+		show_menu()
+		print(boolean)
+	else:
+		hide_menu()

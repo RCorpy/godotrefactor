@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ljcfk2kcdcnr"]
+
+[ext_resource type="Texture2D" uid="uid://0t3fc2oyshe5" path="res://sprites/GoldMineOff.png" id="1_nueoc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bune4"]
+atlas = ExtResource("1_nueoc")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_icash"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bune4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MineAnimatedSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_icash")
+autoplay = "default"
+frame_progress = 0.928476
