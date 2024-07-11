@@ -100,9 +100,9 @@ func _on_complete_banner_complete_sign_clicked():
 	thisData.status = "idle"
 	
 
-	#change texture of house
+	#no need to change texture of mine
 	
-	get_node("MineSprite").texture = thisData.sprites[thisData.level-1]
+	
 
 	
 
