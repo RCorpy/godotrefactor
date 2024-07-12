@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://kohbraulf2q6"]
+
+[ext_resource type="Texture2D" uid="uid://dylvlt7vl5ssc" path="res://sprites/Deco04.png" id="1_tam52"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u5egd"]
+radius = 9.0
+height = 18.0
+
+[node name="SmallRock" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tam52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -3)
+shape = SubResource("CapsuleShape2D_u5egd")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://emvmfac83au5"]
+
+[ext_resource type="Texture2D" uid="uid://jonsenq7w6uy" path="res://sprites/Deco01.png" id="1_1g10i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjmwc"]
+radius = 5.0
+height = 10.0
+
+[node name="SmallMushroom" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1g10i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_pjmwc")

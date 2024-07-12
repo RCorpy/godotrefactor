@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ktdunyaucc4"]
+
+[ext_resource type="Texture2D" uid="uid://bkbn2wvrmm5gx" path="res://sprites/Deco05.png" id="1_ant4a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8a4nk"]
+radius = 12.0
+height = 24.0
+
+[node name="MediumRock" type="StaticBody2D"]
+position = Vector2(-2, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 7)
+texture = ExtResource("1_ant4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_8a4nk")

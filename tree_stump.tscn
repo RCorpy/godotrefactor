@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwti5s65o4m35"]
+
+[ext_resource type="Texture2D" uid="uid://6ujbmdj3sxfo" path="res://sprites/Tree.png" id="1_f3kb4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_padik"]
+atlas = ExtResource("1_f3kb4")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wbbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gaiud"]
+radius = 14.0
+
+[node name="TreeStump" type="StaticBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -66)
+sprite_frames = SubResource("SpriteFrames_3wbbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gaiud")

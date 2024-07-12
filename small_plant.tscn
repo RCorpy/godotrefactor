@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://brqrlgcvb2e3o"]
+
+[ext_resource type="Texture2D" uid="uid://bwjkdm1iuv5lh" path="res://sprites/Deco07.png" id="1_go0k4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lv2uq"]
+radius = 12.0
+height = 24.0
+
+[node name="SmallPlant" type="StaticBody2D"]
+position = Vector2(0, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_go0k4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lv2uq")

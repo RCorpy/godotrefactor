@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvmpb71v6lgtr"]
+
+[ext_resource type="Texture2D" uid="uid://dn56f8c62g745" path="res://sprites/Deco18.png" id="1_i0e3q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1pxci"]
+radius = 27.0
+height = 98.0
+
+[node name="Scarecrow" type="StaticBody2D"]
+position = Vector2(-2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -21)
+texture = ExtResource("1_i0e3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -6)
+shape = SubResource("CapsuleShape2D_1pxci")
