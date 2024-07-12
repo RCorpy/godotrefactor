@@ -109,6 +109,7 @@ func startTimer():
 
 
 func _on_continue_button_pressed():
+	$"..".movementDisabled = false
 	$FireSprite.visible = false
 	$EnemySprite.visible = true
 	failure.visible = false

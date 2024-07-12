@@ -49,6 +49,7 @@ func _on_ready():
 
 
 func _on_next_wave_button_pressed():
+	$"..".movementDisabled = true
 	fight.visible= true
 	fight.createEnemy()
 	fight.adjustForRangedPower()

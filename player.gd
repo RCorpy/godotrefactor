@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var playerAnimatedSprite = %playerAnimatedSprite
 var targetVector
+var movementDisabled = false
 const SPEED = 400
 
 func _input(event):
@@ -21,6 +22,8 @@ func _process(delta):
 		playerAnimatedSprite.animation = "walk"
 	
 	var direction = Input.is_action_pressed("click")
+	if movementDisabled:
+		direction = false
 	if direction:
 		targetVector = get_local_mouse_position()
 		
