@@ -27,6 +27,10 @@ click={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.es.translation")
+
 [rendering]
 
 renderer/rendering_method="mobile"

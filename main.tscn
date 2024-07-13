@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://bowg3jnb23g4x"]
+[gd_scene load_steps=24 format=3 uid="uid://bowg3jnb23g4x"]
 
 [ext_resource type="Texture2D" uid="uid://djao5th8no2hs" path="res://sprites/Tilemap_Flat.png" id="1_8704p"]
 [ext_resource type="Script" path="res://MainDataStore.gd" id="1_uj6ot"]
 [ext_resource type="PackedScene" uid="uid://dijea0kq8cvfa" path="res://player.tscn" id="2_gtswd"]
+[ext_resource type="Script" path="res://Language.gd" id="2_oahcy"]
 [ext_resource type="PackedScene" uid="uid://dv2b14ns7tlte" path="res://knight_house.tscn" id="3_7wghq"]
 [ext_resource type="PackedScene" uid="uid://dogo0a7xcyi6y" path="res://menu.tscn" id="4_kpaay"]
+[ext_resource type="PackedScene" uid="uid://pyp3ddw0iofd" path="res://pop_up.tscn" id="6_awk35"]
 [ext_resource type="PackedScene" uid="uid://bbqqy6h32a6dr" path="res://castletscn.tscn" id="7_5ee3b"]
 [ext_resource type="PackedScene" uid="uid://cnnv3a86c4wjj" path="res://mine.tscn" id="7_dme8y"]
 [ext_resource type="PackedScene" uid="uid://bnievkl0l3771" path="res://tower.tscn" id="9_8yby1"]
@@ -555,6 +557,9 @@ sources/0 = SubResource("TileSetAtlasSource_3x0uh")
 unique_name_in_owner = true
 script = ExtResource("1_uj6ot")
 
+[node name="Language" type="Node2D" parent="."]
+script = ExtResource("2_oahcy")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_btwtn")
 format = 2
@@ -578,9 +583,11 @@ z_index = 6
 position = Vector2(-2, 0)
 
 [node name="Menu" parent="Player" instance=ExtResource("4_kpaay")]
-visible = false
 z_index = 2
 position = Vector2(-3, -5)
+
+[node name="PopUp" parent="Player" instance=ExtResource("6_awk35")]
+visible = false
 
 [node name="KnightHouse" parent="." instance=ExtResource("3_7wghq")]
 z_index = 1
@@ -726,6 +733,7 @@ position = Vector2(992, 556)
 z_as_relative = false
 position = Vector2(643, 739)
 
+[connection signal="ready" from="Language" to="Language" method="_on_ready"]
 [connection signal="game_over" from="Player/Fight" to="DataStore" method="_on_fight_game_over"]
 [connection signal="victory" from="Player/Fight" to="DataStore" method="_on_fight_victory"]
 [connection signal="ready" from="Player/Menu" to="Player/Menu" method="_on_ready"]

@@ -21,6 +21,7 @@ func hide_menu():
 func updateMiddlePart(nameOfNode):
 	if nameOfNode == "Castle":
 		get_node("NextWaveButton").visible = true
+		get_node("NextWaveButton").text = tr("nextwave")
 		
 	else:
 		get_node("NextWaveButton").visible = false

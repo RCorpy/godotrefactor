@@ -123,7 +123,7 @@ func _on_continue_button_pressed():
 		print("victorious")
 		
 func rewriteStats():
-	control_player.text = "Power: %d
-Health: %d" % [getPower(), health]
-	control_enemy.text = "Power: %d
-Health: %d" % [currentEnemy.power - getDefense(), currentEnemy.health]
+	control_player.text = "%s: %d
+%s: %d" % [tr("power"),getPower(),tr("health"), health]
+	control_enemy.text = "%s: %d
+%s: %d" % [tr("power"), currentEnemy.power - getDefense(),tr("health"),currentEnemy.health]

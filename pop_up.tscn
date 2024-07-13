@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://pyp3ddw0iofd"]
+
+[ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="1_lnf3p"]
+
+[node name="PopUp" type="Area2D"]
+
+[node name="PopUpSprite" type="Sprite2D" parent="."]
+position = Vector2(601, 337)
+scale = Vector2(2.89323, 1.30729)
+texture = ExtResource("1_lnf3p")
+
+[node name="PopUpButton" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 382.0
+offset_right = 692.0
+offset_bottom = 441.0
+text = "CONTINUAR"
+
+[node name="PopUpText" type="RichTextLabel" parent="."]
+offset_left = 425.0
+offset_top = 264.0
+offset_right = 773.0
+offset_bottom = 355.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]Knight Upgraded
+Attack +1[/center]"
+fit_content = true
