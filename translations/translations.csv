@@ -3,3 +3,18 @@ greeting,Hello,Hola
 nextwave,Next Wave,Siguiente Enemigo
 power,Power,Fuerza
 health,Health,Vida
+oops,Oopsi,Upsi
+errorcastlelevel,This requires a higher castle level,Esto requiere un nivel mayor del castillo
+errororeamount,You need more resources,Necesitas mas recursos
+KnightHouse,Knight upgraded,Caballero mejorado
+KnightHousestat,Attack +1, Ataque +1
+KnightHouse2,Archer upgraded,Arquero mejorado
+KnightHouse2stat,Enemy Health -10%,Vida enemiga -10%
+Tower,Tower upgraded,Torre Mejorada
+Towerstat,Health regen +1,Regeneracion de vida +1
+Castle,Castle upgraded, Castillo mejorado
+Castlestat,New building available,Nuevo edificio disponible
+Sheppard,Sheppard Upgraded,Pastor mejorado
+Sheppardstat,Defense +1,Defensa +1
+Mine,Mine Upgraded,Mina Mejorada
+Minestat,Gold per enemy +10,Oro por enemigo +10

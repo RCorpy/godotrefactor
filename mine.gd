@@ -6,6 +6,7 @@ const GoldMineOffSprite = preload("res://sprites/GoldMineOff.png")
 @onready var plus_banner = $MineDataStore/PlusBanner
 @onready var complete_banner = $MineDataStore/CompleteBanner
 @onready var progress_bar = $MineDataStore/ProgressBar
+@onready var pop_up = $"../Player/PopUp"
 
 signal show_menu
 signal startMining
@@ -38,12 +39,11 @@ func _on_mine_interact_body_exited(body):
 
 func check_upgrade_req():
 	#Do you have the castle level?
-	print("castle level" + str(globalDataStore.Castle.level) + str(globalDataStore.checkBuiltBuildings())+ str(globalDataStore.Castle.level <= globalDataStore.checkBuiltBuildings()))
-	print("resources" + str(globalDataStore.Ore >= thisData.orePrice[thisData.level - 1]))
 	if get_name() == "Castle" || globalDataStore[get_name()].level > 1:
 		print("its castle, ignore castle level req")
 	elif globalDataStore.Castle.level - 1 <= globalDataStore.checkBuiltBuildings():
 		print("ERROR, you dont have castle level")
+		pop_up.openPopUp("oops","errorcastlelevel")
 		return false
 	#Are there resources?
 	if globalDataStore.Ore >= thisData.orePrice[thisData.level - 1]:
@@ -53,6 +53,7 @@ func check_upgrade_req():
 	else:
 		#Need to show message when you dont have Ore
 		print("ERROR, you dont have ore")
+		pop_up.openPopUp("oops","errororeamount")
 		return false
 
 func on_mine_create_pop_up():
@@ -99,6 +100,8 @@ func _on_complete_banner_complete_sign_clicked():
 	#set status to idle to allow to be upgraded again
 	thisData.status = "idle"
 	
+	#congratulations banner
+	pop_up.openPopUp(get_name(), get_name()+"stat")
 
 	#no need to change texture of mine
 	

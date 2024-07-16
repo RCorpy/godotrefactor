@@ -4,7 +4,7 @@ extends Node2D
 
 
 var isMining= false
-var Ore = 0
+var Ore = 90
 var currentBuilding = "KnightHouse"
 var builtBuildings = 0
 

@@ -114,6 +114,7 @@ func _on_continue_button_pressed():
 	$EnemySprite.visible = true
 	failure.visible = false
 	success.visible = false
+	continue_button.visible = false
 	visible = false
 	if failure.visible == true:
 		print("defeated")

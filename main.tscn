@@ -587,7 +587,8 @@ z_index = 2
 position = Vector2(-3, -5)
 
 [node name="PopUp" parent="Player" instance=ExtResource("6_awk35")]
-visible = false
+z_index = 2
+position = Vector2(-4, -97)
 
 [node name="KnightHouse" parent="." instance=ExtResource("3_7wghq")]
 z_index = 1
