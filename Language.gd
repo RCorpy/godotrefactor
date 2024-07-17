@@ -2,6 +2,7 @@ extends Node2D
 
 var available_locales = ["en", "es"]
 
+
 func change_language(locale: String):
 	# Establece el idioma actual
 	TranslationServer.set_locale(locale)

@@ -18,3 +18,17 @@ Sheppard,Sheppard Upgraded,Pastor mejorado
 Sheppardstat,Defense +1,Defensa +1
 Mine,Mine Upgraded,Mina Mejorada
 Minestat,Gold per enemy +10,Oro por enemigo +10
+blank, , 
+start,Welcome! Word in the street is that you challenged the King!,Bienvenido! Se dice que has retado al Rey!
+start2,text2 blank continuetext,text2 blank continuetext
+continuetext,text3 blank continuetext2,text3 blank continuetext2
+continuetext2,text4 blank continuetext3,text4 blank continuetext3
+continuetext3,text5 blank continuetext4,text5 blank continuetext4
+continuetext4,text6 blank continuetext5,text6 blank continuetext5
+continuetext5,text7 blank,text7 blank
+text2,And the King was angry enough to accept it!,Y el Rey estaba lo suficientemente furioso para aceptar!
+text3,You and your friend the pseudo-hero have to make a town!,Tu y tu amigo el pseudo-heroe teneis que crear un poblado!
+text4,He will fight and you will manage,El luchará y tu organizarás
+text5,Improve buildings to help your pseudo-hero friend!,Mejora edificios para ayudar a tu amigo el pseudo-heroe
+text6,You can always earn more resources by fighting the forces of evil,Siempre puedes conseguir mas recursos luchando contra las fuerzas del mal
+text7,See how far you can go in this challenge against the King!,Descubre hasta donde puedes llegar en este desafio contra el Rey!

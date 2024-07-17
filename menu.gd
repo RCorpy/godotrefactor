@@ -60,7 +60,7 @@ func _on_next_wave_button_pressed():
 
 
 func _on_mine_show_menu(boolean, nameOfNode):
-	print(nameOfNode)
+	#(nameOfNode)
 	data_store.currentBuilding = nameOfNode
 	if boolean:
 		leftSideSprite = data_store.getCurrentSprite().instantiate()
@@ -68,6 +68,6 @@ func _on_mine_show_menu(boolean, nameOfNode):
 		updateMiddlePart(nameOfNode)
 		updateRightPart(nameOfNode)
 		show_menu()
-		print(boolean)
+		#(boolean)
 	else:
 		hide_menu()

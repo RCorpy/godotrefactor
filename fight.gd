@@ -100,7 +100,7 @@ func _on_combat_timer_timeout():
 		$EnemySprite.visible = false
 		return "Victory"
 	else:
-		print("combat turn")
+		# combat turn
 		rewriteStats()
 		startTimer()
 

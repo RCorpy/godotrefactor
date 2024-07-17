@@ -141,11 +141,6 @@ func getCurrentSprite():
 		_:
 			return KnightSprite
 
-#Upgrade functions
-
-func check_upgrade_req(node_name):
-	print(str(getVariable(node_name).level) + "this is current level")
-	
 #For mining
 
 func _on_mine_start_mining():

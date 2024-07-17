@@ -113,7 +113,7 @@ func _on_complete_banner_complete_sign_clicked():
 func _on_ready():
 	thisData = globalDataStore[get_name()]
 	
-	print(thisData)
+	#(thisData)
 
 
 func _on_plus_banner_plus_sign_clicked():
