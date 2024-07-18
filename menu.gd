@@ -2,7 +2,10 @@ extends Area2D
 
 @onready var data_store = %DataStore
 @onready var fight = $"../Fight"
+@onready var center_center = $CenterCenter
+@onready var right_center = $RightCenter
 
+var richTextNode = preload("res://rich_text.tscn")
 var leftSideSprite = ""
 var middleMenu=""
 var rightMenu=""
@@ -16,13 +19,29 @@ func hide_menu():
 	position = initial_position
 	for n in get_node("LeftCenter").get_children():
 		get_node("LeftCenter").remove_child(n)
-	
+	for n in get_node("CenterCenter").get_children():
+		get_node("CenterCenter").remove_child(n)
+	for n in get_node("RightCenter").get_children():
+		get_node("RightCenter").remove_child(n)
 
 func updateMiddlePart(nameOfNode):
 	if nameOfNode == "Castle":
 		get_node("NextWaveButton").visible = true
 		get_node("NextWaveButton").text = tr("nextwave")
-		
+		var abovetext = RichTextLabel.new()
+		abovetext.size = Vector2(200, 40)
+		abovetext.position = position + Vector2(-78,-65)
+		abovetext.bbcode_enabled=true
+		abovetext.set_cell_border_color("black")
+		abovetext.text = "[center]"+ tr("castleabovecontinue") + str($"../Fight".round)
+		center_center.add_child(abovetext)
+		var belowtext = RichTextLabel.new()
+		belowtext.size = Vector2(200, 40)
+		belowtext.position = position  + Vector2(-78,42)
+		belowtext.bbcode_enabled=true
+		belowtext.set_cell_border_color("black")
+		belowtext.text = "[center]"+ "HELLOBIATCHES"
+		center_center.add_child(belowtext)
 	else:
 		get_node("NextWaveButton").visible = false
 	
