@@ -4,6 +4,7 @@ extends Area2D
 @onready var fight = $"../Fight"
 @onready var center_center = $CenterCenter
 @onready var right_center = $RightCenter
+@onready var right_side_text = $RightSideText
 
 var richTextNode = preload("res://rich_text.tscn")
 var leftSideSprite = ""
@@ -40,13 +41,16 @@ func updateMiddlePart(nameOfNode):
 		belowtext.position = position  + Vector2(-78,42)
 		belowtext.bbcode_enabled=true
 		belowtext.set_cell_border_color("black")
-		belowtext.text = "[center]"+ "HELLOBIATCHES"
+		belowtext.text = "[center]"+ tr("castlebelowcontinue") + str($"../Fight".getEnemyReward())
 		center_center.add_child(belowtext)
 	else:
 		get_node("NextWaveButton").visible = false
 	
 func updateRightPart(nameOfNode):
-	pass
+	if nameOfNode == "Castle":
+		right_side_text.text = "[center]" +tr("rightcastletext")
+	else:
+		pass
 
 func _on_knight_house_show_menu(boolean, nameOfNode):
 	print(nameOfNode)

@@ -31,11 +31,13 @@ texture = ExtResource("1_3upxq")
 [node name="LeftCenter" type="Node2D" parent="."]
 position = Vector2(-471, 424)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -280.0
-offset_top = 350.0
-offset_right = -80.0
-offset_bottom = 390.0
+[node name="RightSideText" type="RichTextLabel" parent="."]
+offset_left = 65.0
+offset_top = 346.0
+offset_right = 562.0
+offset_bottom = 500.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
 
 [node name="CenterCenter" type="Node2D" parent="."]
 position = Vector2(-180, 425)

@@ -53,19 +53,22 @@ var currentEnemy = {
 	"reward": 400
 }
 
+func getEnemyReward():
+	return round * 20
+
 func createEnemy():
 	currentEnemy = {
 		"power": round * 1,
 		"health": round * 2,
 		"sprite": "none",
-		"reward": round * 20
+		"reward": getEnemyReward()
 	}
 	
 	return {
 		"power": round * 1,
 		"health": round * 2,
 		"sprite": "none",
-		"reward": round * 20
+		"reward": getEnemyReward()
 	}
 
 func adjustForRangedPower():
@@ -115,6 +118,7 @@ func _on_continue_button_pressed():
 	failure.visible = false
 	success.visible = false
 	continue_button.visible = false
+	$"../Menu".hide_menu()
 	visible = false
 	if failure.visible == true:
 		print("defeated")
