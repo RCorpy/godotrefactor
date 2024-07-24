@@ -13,6 +13,7 @@ func _ready():
 		openPopUp("start","","start2")
 
 func closePopUp():
+	$"../Menu".hide_menu()
 	visible = false
 	player.movementDisabled = false
 	

@@ -36,3 +36,15 @@ castleabovecontinue,Wave: ,Oleada:
 castlebelowcontinue,Reward: ,Recompensa: 
 castlerighttextup,Welcome adventurer! build and upgrade this building to provide defenses for more buildings and allow you to develope them!,Bienvenido aventurero! contruye y mejora este edificio para proveer defensas para mas edificios permitiendo que puedas mejorarlos!
 castlerighttextdown,Amount of possible buildings: ,Cantidad de edificios disponibles: 
+rightcastletext,The castle is the most important building of the town! With each improvement you can build an aditional building to aid your pseudo-hero \n\n Available Buildings: ,El castillo es el edificio mas importante del pueblo! Con cada mejora puedes construir un nuevo edificio para ayudar a tu pseudo-heroe \n\n Edificios disponibles:
+rightknighthousetext,The pseudo-hero house!Improving his house will surely will help him rest and we all know that a well rested hero hits harder!,La casa del pseudo-heroe!Mejorar su casa le ayudara a descansar mejor y todos sabemos que un heroe descansado golpea mas fuerte!
+rightarcherhousetext,The archer garrison!Build and improve this house to weaken the enemies before they clash with our pseudo-hero!,El cuartel de arqueros!Construye y mejora este edificio para debilitar a los enemigos antes de que peleen con el pseudo-heroe!
+righttowertext,The healing tower! Knowledge of the human body will improve healing on our pseudo-hero so he can fight more times!,La torre de curación! Conocimiento del cuerpo humano mejorará la posible curación en nuestro pseudo-heroe para que pueda pelear mas veces!
+rightsheppardtext,Before I was a sheppard i was a blacksmith and I can craft some defensive gear with the right tools and wool!,Antes de ser un pastor era herrero y puedo fabricar armadura con las herramientas adecuadas y un poco de lana!
+rightminetext,The mine will generate extra resources after every wave! A little investment now will give more later,La mina nos dará recursos despues de cada oleada! Una pequeña inversion ahora devolverá más en el futuro
+middleknighthousetext,Current strength: ,Fuerza:
+middlearcherhousetext,Enemy HP: -,Vida enemiga: -
+middleminetext,Resources: +,Recursos: +
+middletowertext,Healing power: ,Poder de curación: 
+middlesheppardtext,Defense: ,Defensa:
+improvementcost,Resources required: ,Recursos necesarios: 
