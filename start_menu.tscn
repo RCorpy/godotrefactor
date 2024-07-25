@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxjdahq5rn27e"]
+
+[ext_resource type="PackedScene" uid="uid://bowg3jnb23g4x" path="res://main.tscn" id="1_5s64g"]
+[ext_resource type="Script" path="res://SaveManager.gd" id="2_5qu4o"]
+
+[node name="StartMenu" type="Node2D"]
+
+[node name="Main" parent="." instance=ExtResource("1_5s64g")]
+
+[node name="SaveManager" type="Node2D" parent="."]
+script = ExtResource("2_5qu4o")

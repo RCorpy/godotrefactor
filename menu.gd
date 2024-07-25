@@ -16,7 +16,6 @@ var initial_position = Vector2(0,0)
 
 func show_menu():
 	position += Vector2(0,-200)
-	
 
 func hide_menu():
 	position = initial_position
@@ -98,6 +97,7 @@ func _on_ready():
 
 
 func _on_next_wave_button_pressed():
+	$"../..".on_save()
 	$"..".movementDisabled = true
 	fight.visible= true
 	fight.createEnemy()

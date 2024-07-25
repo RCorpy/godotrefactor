@@ -150,9 +150,7 @@ func _on_mine_stop_mining():
 	isMining = false
 
 func _process(delta):
-	if isMining:
-		Ore += delta * Mine["level"]
-		ControlUi.text = str(round(Ore)) + " Ore"
+	ControlUi.text = str(round(Ore)) + " Ore"
 		
 func updateControlUi():
 	ControlUi.text = str(round(Ore)) + " Ore"
@@ -178,3 +176,32 @@ func checkBuiltBuildings():
 		builtBuildings = builtBuildings + 1
 	
 	return builtBuildings
+
+func get_all_data():
+	var all_data = {
+		"KnightHouse": KnightHouse.level,
+		"Mine": Mine.level,
+		"Tower": Tower.level,
+		"Sheppard":Sheppard.level,
+		"KnightHouse2": KnightHouse2.level,
+		"Castle": Castle.level,
+		"Ore": Ore
+	}
+	return all_data
+	
+func load_all_data(all_data):
+	KnightHouse.level = all_data["KnightHouse"]
+	KnightHouse2.level = all_data["KnightHouse2"]
+	Mine.level = all_data["Mine"]
+	Tower.level = all_data["Tower"]
+	Sheppard.level = all_data["Sheppard"]
+	Castle.level = all_data["Castle"]
+	Ore = all_data["Ore"]
+	print("loaded successfully!")
+	$"../KnightHouse".propagate_load()
+	$"../Mine".propagate_load()
+	$"../KnightHouse2".propagate_load()
+	$"../Castle".propagate_load()
+	$"../Tower".propagate_load()
+	$"../Sheppard".propagate_load()
+	

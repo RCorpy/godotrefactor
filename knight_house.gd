@@ -108,3 +108,7 @@ func _on_ready():
 	thisData = globalDataStore[get_name()]
 	
 	#print(thisData)
+
+func propagate_load():
+	thisData = globalDataStore[get_name()]
+	get_node("KnightHouseSprite").texture = thisData.sprites[thisData.level-1]

@@ -114,7 +114,8 @@ func _on_ready():
 	thisData = globalDataStore[get_name()]
 	
 	#(thisData)
-
+func propagate_load():
+	thisData = globalDataStore[get_name()]
 
 func _on_plus_banner_plus_sign_clicked():
 	if check_upgrade_req():
