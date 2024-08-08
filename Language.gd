@@ -6,6 +6,7 @@ var available_locales = ["en", "es"]
 func change_language(locale: String):
 	# Establece el idioma actual
 	TranslationServer.set_locale(locale)
+	print(("LANGUAGE CHANGED TO") + str(locale))
 # Llama a change_language() desde el menú para cambiar el idioma
 
 ###############NO CONECTADO AUN PORQUE NO HAY MENU###############
@@ -18,3 +19,4 @@ func _on_menu_change_language(locale: String):
 func _on_ready():
 		# Configura el idioma predeterminado
 	change_language("es")
+

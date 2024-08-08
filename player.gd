@@ -13,6 +13,8 @@ func _input(event):
 func _ready():
 	pass # Replace with function body.
 
+func use_this_camera():
+	$PlayerCamera.make_current()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

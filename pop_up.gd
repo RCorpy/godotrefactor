@@ -7,10 +7,6 @@ var currentTextContinue = null
 var currentTextArray = []
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	visible = false
-	if $"../Fight".round ==1:
-		openPopUp("start","","start2")
 
 func closePopUp():
 	$"../Menu".hide_menu()

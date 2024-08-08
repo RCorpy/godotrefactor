@@ -1,11 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxjdahq5rn27e"]
+[gd_scene load_steps=5 format=3 uid="uid://bxjdahq5rn27e"]
 
-[ext_resource type="PackedScene" uid="uid://bowg3jnb23g4x" path="res://main.tscn" id="1_5s64g"]
+[ext_resource type="Script" path="res://start_menu.gd" id="1_n51k7"]
 [ext_resource type="Script" path="res://SaveManager.gd" id="2_5qu4o"]
+[ext_resource type="Script" path="res://Area2D.gd" id="2_8hxxl"]
+[ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="2_mud31"]
 
 [node name="StartMenu" type="Node2D"]
-
-[node name="Main" parent="." instance=ExtResource("1_5s64g")]
+script = ExtResource("1_n51k7")
 
 [node name="SaveManager" type="Node2D" parent="."]
 script = ExtResource("2_5qu4o")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_8hxxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(577.5, 303.5)
+scale = Vector2(5.44271, 2.74479)
+texture = ExtResource("2_mud31")
+
+[node name="StartButton" type="Button" parent="Area2D"]
+offset_left = 415.0
+offset_top = 225.0
+offset_right = 727.0
+offset_bottom = 275.0
+text = "Start"
+
+[node name="LoadButton" type="Button" parent="Area2D"]
+offset_left = 415.0
+offset_top = 294.0
+offset_right = 730.0
+offset_bottom = 345.0
+text = "Load"
+
+[node name="EspanolButton" type="Button" parent="Area2D"]
+offset_left = 417.0
+offset_top = 366.0
+offset_right = 563.0
+offset_bottom = 406.0
+text = "Español"
+
+[node name="EnglishButton" type="Button" parent="Area2D"]
+offset_left = 583.0
+offset_top = 364.0
+offset_right = 730.0
+offset_bottom = 405.0
+text = "English"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 325)
+
+[connection signal="pressed" from="Area2D/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Area2D/EspanolButton" to="." method="_on_espanol_button_pressed"]
+[connection signal="pressed" from="Area2D/EnglishButton" to="." method="_on_english_button_pressed"]
