@@ -159,9 +159,6 @@ func _on_fight_victory(reward):
 	Ore = Ore + reward
 	updateControlUi()
 
-func _on_fight_game_over():
-	pass # Replace with function body.
-	
 func checkBuiltBuildings():
 	builtBuildings = 0
 	if KnightHouse.level >1:

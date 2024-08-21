@@ -90,8 +90,9 @@ func _on_combat_timer_timeout():
 		rewriteStats()
 		emit_signal("game_over")
 		failure.visible = true
-		continue_button.visible = true
-		return "Game Over"
+		continue_button.visible = false
+		visible = false
+		$"../Menu".hide_menu()
 	#enemy death
 	elif currentEnemy.health <1:
 		combat_timer.stop()

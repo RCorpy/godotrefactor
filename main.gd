@@ -7,6 +7,7 @@ extends Node2D
 signal do_save()
 signal do_load(data)
 
+
 func on_save():
 	emit_signal("do_save")
 	#save_manager.save_data(data_store.get_all_data())
@@ -29,3 +30,8 @@ func start_welcome():
 		$Player/PopUp.openPopUp("start","","start2")
 
 
+
+
+func _on_fight_game_over():
+	$"../GameOver".on_game_over_start()
+	

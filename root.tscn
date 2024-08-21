@@ -14,3 +14,5 @@ visible = false
 [node name="StartMenu" parent="." instance=ExtResource("1_yxr2w")]
 
 [node name="GameOver" parent="." instance=ExtResource("4_g651r")]
+visible = false
+top_level = true

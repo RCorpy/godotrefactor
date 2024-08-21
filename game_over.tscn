@@ -1,13 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2tpvpluyrpmd"]
+[gd_scene load_steps=3 format=3 uid="uid://d2tpvpluyrpmd"]
 
 [ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="1_6bll4"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_ym4ct"]
 
 [node name="GameOver" type="Node2D"]
+script = ExtResource("1_ym4ct")
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 4096
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(3.8147e-06, -1)
+position = Vector2(-1, 2)
 scale = Vector2(3.35677, 1.70328)
 texture = ExtResource("1_6bll4")
 
@@ -16,6 +19,7 @@ offset_left = -77.0
 offset_top = 90.0
 offset_right = 78.0
 offset_bottom = 128.0
+text = "GO AGANE"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Area2D"]
 offset_left = -151.0
@@ -26,3 +30,5 @@ theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "[center]DEFEAT"
+
+[connection signal="pressed" from="Area2D/Button" to="." method="_on_button_pressed"]

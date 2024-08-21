@@ -37,3 +37,7 @@ func translate_to(lang):
 	if lang == "es":
 		$Area2D/StartButton.text = "Empezar"
 		$Area2D/LoadButton.text = "Cargar"
+
+func delete_save():
+	print("Save was deleted")
+	pass

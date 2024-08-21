@@ -2871,7 +2871,7 @@ z_as_relative = false
 position = Vector2(643, 739)
 
 [connection signal="ready" from="Language" to="Language" method="_on_ready"]
-[connection signal="game_over" from="Player/Fight" to="DataStore" method="_on_fight_game_over"]
+[connection signal="game_over" from="Player/Fight" to="." method="_on_fight_game_over"]
 [connection signal="victory" from="Player/Fight" to="DataStore" method="_on_fight_victory"]
 [connection signal="ready" from="Player/Menu" to="Player/Menu" method="_on_ready"]
 [connection signal="show_menu" from="KnightHouse" to="Player/Menu" method="_on_knight_house_show_menu"]
