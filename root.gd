@@ -18,3 +18,8 @@ func activate_game_camera():
 	start_menu.visible = false
 	main.start_welcome()
 	
+# Game Over
+# Save / Load Functions
+# Improve Menu
+# Music
+

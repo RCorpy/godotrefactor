@@ -27,3 +27,5 @@ func start_welcome():
 	$Player/PopUp.visible = false
 	if $Player/Fight.round ==1:
 		$Player/PopUp.openPopUp("start","","start2")
+
+
