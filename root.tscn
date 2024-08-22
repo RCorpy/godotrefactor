@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://nwxuwpy6wwhm"]
+[gd_scene load_steps=6 format=3 uid="uid://nwxuwpy6wwhm"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_ow0n7"]
 [ext_resource type="PackedScene" uid="uid://bxjdahq5rn27e" path="res://start_menu.tscn" id="1_yxr2w"]
 [ext_resource type="PackedScene" uid="uid://bowg3jnb23g4x" path="res://main.tscn" id="2_hmge4"]
 [ext_resource type="PackedScene" uid="uid://d2tpvpluyrpmd" path="res://game_over.tscn" id="4_g651r"]
+[ext_resource type="AudioStream" uid="uid://ccb5r64y24fnu" path="res://sounds/20240822095822 23 segundos de la 2.mp3" id="5_8x5qo"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_ow0n7")
@@ -16,3 +17,7 @@ visible = false
 [node name="GameOver" parent="." instance=ExtResource("4_g651r")]
 visible = false
 top_level = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8x5qo")
+volume_db = -27.172

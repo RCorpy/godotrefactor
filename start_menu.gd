@@ -59,7 +59,8 @@ const START_DATA = {
 		"KnightHouse2": 1,
 		"Castle": 1,
 		"Ore": 50,
-		"round":1
+		"Round":1,
+		"Health":10
 	}
 
 

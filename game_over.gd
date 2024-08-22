@@ -26,3 +26,4 @@ func _on_button_pressed():
 func get_game_over_translations():
 	$Area2D/Button.text = tr("go agane")
 	$Area2D/RichTextLabel.text =  "[center]"+ tr("defeat")
+	$Area2D/RichTextLabel2.text = "[center]"+ tr("at wave") + str(main.get_node("Player").get_node("Fight").round)

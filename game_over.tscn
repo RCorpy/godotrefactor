@@ -1,7 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2tpvpluyrpmd"]
+[gd_scene load_steps=11 format=3 uid="uid://d2tpvpluyrpmd"]
 
 [ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="1_6bll4"]
 [ext_resource type="Script" path="res://game_over.gd" id="1_ym4ct"]
+[ext_resource type="Texture2D" uid="uid://b3l2e54x576ca" path="res://sprites/TNT_Blue.png" id="3_glwsd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uytvv"]
+atlas = ExtResource("3_glwsd")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt6w8"]
+atlas = ExtResource("3_glwsd")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lfqr"]
+atlas = ExtResource("3_glwsd")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvdxy"]
+atlas = ExtResource("3_glwsd")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_388mg"]
+atlas = ExtResource("3_glwsd")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7tgd"]
+atlas = ExtResource("3_glwsd")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5xck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uytvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt6w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lfqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvdxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_388mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7tgd")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_ym4ct")
@@ -22,13 +73,28 @@ offset_bottom = 128.0
 text = "GO AGANE"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Area2D"]
-offset_left = -151.0
-offset_top = -121.0
-offset_right = 151.0
-offset_bottom = -57.0
+offset_left = -147.0
+offset_top = -143.0
+offset_right = 155.0
+offset_bottom = -88.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "[center]DEFEAT"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Area2D"]
+offset_left = -89.0
+offset_top = -87.0
+offset_right = 92.0
+offset_bottom = -63.0
+bbcode_enabled = true
+text = "[center]At wave XX"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(2, 10)
+sprite_frames = SubResource("SpriteFrames_s5xck")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.493396
 
 [connection signal="pressed" from="Area2D/Button" to="." method="_on_button_pressed"]

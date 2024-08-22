@@ -1,9 +1,111 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxjdahq5rn27e"]
+[gd_scene load_steps=21 format=3 uid="uid://bxjdahq5rn27e"]
 
 [ext_resource type="Script" path="res://start_menu.gd" id="1_n51k7"]
 [ext_resource type="Script" path="res://SaveManager.gd" id="2_5qu4o"]
 [ext_resource type="Script" path="res://Area2D.gd" id="2_8hxxl"]
 [ext_resource type="Texture2D" uid="uid://dnw5sdh07qpco" path="res://sprites/Carved_9Slides.png" id="2_mud31"]
+[ext_resource type="Texture2D" uid="uid://dcw43std817fs" path="res://sprites/Pawn_Blue.png" id="5_xq407"]
+[ext_resource type="Texture2D" uid="uid://dmy4gieba5bp5" path="res://sprites/Warrior_Blue.png" id="6_yu4pm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vvhb"]
+atlas = ExtResource("5_xq407")
+region = Rect2(0, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j600"]
+atlas = ExtResource("5_xq407")
+region = Rect2(192, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdeu7"]
+atlas = ExtResource("5_xq407")
+region = Rect2(384, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bmj0"]
+atlas = ExtResource("5_xq407")
+region = Rect2(576, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2n2j"]
+atlas = ExtResource("5_xq407")
+region = Rect2(768, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaycg"]
+atlas = ExtResource("5_xq407")
+region = Rect2(960, 768, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ff7pn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vvhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j600")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdeu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bmj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2n2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaycg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8xer"]
+atlas = ExtResource("6_yu4pm")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnt33"]
+atlas = ExtResource("6_yu4pm")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_833w0"]
+atlas = ExtResource("6_yu4pm")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm4oi"]
+atlas = ExtResource("6_yu4pm")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deaeq"]
+atlas = ExtResource("6_yu4pm")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx40d"]
+atlas = ExtResource("6_yu4pm")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg1cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8xer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnt33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_833w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm4oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deaeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx40d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="StartMenu" type="Node2D"]
 script = ExtResource("1_n51k7")
@@ -46,6 +148,37 @@ offset_top = 364.0
 offset_right = 730.0
 offset_bottom = 405.0
 text = "English"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Area2D"]
+offset_left = 217.0
+offset_top = 86.0
+offset_right = 923.0
+offset_bottom = 199.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 67
+bbcode_enabled = true
+text = "[center]PSEUDO-HERO"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Area2D"]
+offset_left = 839.0
+offset_top = 508.0
+offset_right = 1079.0
+offset_bottom = 562.0
+bbcode_enabled = true
+text = "[center]By Reymon"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(272, 316)
+sprite_frames = SubResource("SpriteFrames_ff7pn")
+autoplay = "default"
+frame_progress = 0.31956
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(898, 317)
+sprite_frames = SubResource("SpriteFrames_mg1cw")
+autoplay = "default"
+frame_progress = 0.458292
+flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 325)

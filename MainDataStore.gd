@@ -4,7 +4,7 @@ extends Node2D
 
 
 var isMining= false
-var Ore = 90 # --> Change it in START_DATA in start_menu
+var Ore = 50 # --> Change it in START_DATA in start_menu
 var currentBuilding = "KnightHouse"
 var builtBuildings = 0
 
@@ -158,6 +158,7 @@ func updateControlUi():
 func _on_fight_victory(reward):
 	Ore = Ore + reward
 	updateControlUi()
+	#print("reward given")
 
 func checkBuiltBuildings():
 	builtBuildings = 0
@@ -183,7 +184,8 @@ func get_all_data():
 		"KnightHouse2": KnightHouse2.level,
 		"Castle": Castle.level,
 		"Ore": Ore,
-		"Round": $"../Player/Fight".round
+		"Round": $"../Player/Fight".round,
+		"Health": $"../Player/Fight".health
 	}
 	print("got all data here")
 	return all_data
@@ -197,6 +199,8 @@ func load_all_data(all_data):
 	Castle.level = all_data["Castle"]
 	Ore = all_data["Ore"]
 	$"../Player/Fight".round = all_data["Round"]
+	$"../Player/Fight".health = all_data["Health"]
+	$"../Player/Fight".get_node("Defeat").visible = false
 	print("loaded successfully!")
 	$"../KnightHouse".propagate_load()
 	$"../Mine".propagate_load()

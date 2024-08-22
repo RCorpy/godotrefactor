@@ -18,7 +18,7 @@ var thisData
 
 
 func mineWork():
-	%DataStore.Ore = %DataStore.Ore + %DataStore.Mine.level * 10
+	%DataStore.Ore = %DataStore.Ore + (%DataStore.Mine.level - 1) * 10
 
 func _on_mine_interact_body_entered(body):
 	if(body.get_name()=="Player"):

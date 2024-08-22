@@ -6,6 +6,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	activate_menu_camera()
+	$AudioStreamPlayer.play()
 
 func activate_menu_camera():
 	start_menu.use_start_menu_camera()
@@ -21,6 +22,6 @@ func activate_game_camera():
 # Game Over V
 # Save / Load Functions V
 # Improve Menu
-# Improve Game Over
+# Improve Game Over V
 # Music
 
