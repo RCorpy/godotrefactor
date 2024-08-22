@@ -4,7 +4,7 @@ extends Node2D
 
 
 var isMining= false
-var Ore = 90
+var Ore = 90 # --> Change it in START_DATA in start_menu
 var currentBuilding = "KnightHouse"
 var builtBuildings = 0
 
@@ -182,8 +182,10 @@ func get_all_data():
 		"Sheppard":Sheppard.level,
 		"KnightHouse2": KnightHouse2.level,
 		"Castle": Castle.level,
-		"Ore": Ore
+		"Ore": Ore,
+		"Round": $"../Player/Fight".round
 	}
+	print("got all data here")
 	return all_data
 	
 func load_all_data(all_data):
@@ -194,6 +196,7 @@ func load_all_data(all_data):
 	Sheppard.level = all_data["Sheppard"]
 	Castle.level = all_data["Castle"]
 	Ore = all_data["Ore"]
+	$"../Player/Fight".round = all_data["Round"]
 	print("loaded successfully!")
 	$"../KnightHouse".propagate_load()
 	$"../Mine".propagate_load()
@@ -201,4 +204,5 @@ func load_all_data(all_data):
 	$"../Castle".propagate_load()
 	$"../Tower".propagate_load()
 	$"../Sheppard".propagate_load()
+	
 	

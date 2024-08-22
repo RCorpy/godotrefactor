@@ -51,5 +51,6 @@ text = "English"
 position = Vector2(577, 325)
 
 [connection signal="pressed" from="Area2D/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Area2D/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="Area2D/EspanolButton" to="." method="_on_espanol_button_pressed"]
 [connection signal="pressed" from="Area2D/EnglishButton" to="." method="_on_english_button_pressed"]

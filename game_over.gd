@@ -21,6 +21,7 @@ func on_game_over_close():
 
 func _on_button_pressed():
 	on_game_over_close()
+	
 
 func get_game_over_translations():
 	$Area2D/Button.text = tr("go agane")

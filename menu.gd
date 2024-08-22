@@ -97,7 +97,6 @@ func _on_ready():
 
 
 func _on_next_wave_button_pressed():
-	$"../..".on_save()
 	$"..".movementDisabled = true
 	fight.visible= true
 	fight.createEnemy()

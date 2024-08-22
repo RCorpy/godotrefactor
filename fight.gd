@@ -102,7 +102,6 @@ func _on_combat_timer_timeout():
 		continue_button.visible = true
 		$FireSprite.visible = true
 		$EnemySprite.visible = false
-		return "Victory"
 	else:
 		# combat turn
 		rewriteStats()
@@ -125,6 +124,7 @@ func _on_continue_button_pressed():
 		print("defeated")
 	else:
 		round = round + 1
+		$"../..".on_save(data_store.get_all_data())
 		modifyHealth(getTowerHealing(),0)
 		print("victorious")
 		

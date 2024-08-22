@@ -29,6 +29,13 @@ func _on_english_button_pressed():
 	main.change_language("en")
 	translate_to("en")
 	
+func _on_load_button_pressed():
+	main.on_load_all_data($SaveManager.load_data())
+	root.activate_game_camera()
+	
+func on_save_data(data):
+	$SaveManager.save_data(data)
+	
 func translate_to(lang):
 	if lang == "en":
 		$Area2D/StartButton.text = "Start"
@@ -40,4 +47,20 @@ func translate_to(lang):
 
 func delete_save():
 	print("Save was deleted")
-	pass
+	
+	$SaveManager.save_data(START_DATA)
+
+
+const START_DATA = {
+		"KnightHouse": 1,
+		"Mine": 1,
+		"Tower": 1,
+		"Sheppard":1,
+		"KnightHouse2": 1,
+		"Castle": 1,
+		"Ore": 50,
+		"round":1
+	}
+
+
+
